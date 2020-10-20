@@ -1,0 +1,285 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-size: 18px;
+}
+
+#BGvid{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+#logopart h1{
+    font-family: 'Lora';
+}
+
+#logopart p{
+    font-family: 'Montserrat';
+    font-size: 14px;
+}
+
+#logo{
+    width: 300px;
+    height: 300px;
+}
+
+#loginform{
+    font-family: 'Roboto';
+}
+
+hr{
+    width: 100%;
+}
+
+.opacity{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    color: #f1f1f1;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+}
+
+.main{
+    background: rgba(0, 0, 0, 0.6);
+    color: #f1f1f1;
+    min-width: 100%; 
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.main h1{
+    font-size: 300%;
+    line-height: 120%;
+}
+
+.main h1,
+.main p{
+    margin: 3px;
+    padding: 3px;
+}
+
+.loginbutton button{
+    background-color: #111;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.loginbutton button:hover,
+.regibutton button:hover{
+    animation-name: hover;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    border-radius: 4px;
+}
+
+@keyframes hover{
+    from{
+        color: #141414;
+    }
+    to{
+        background-color: #f2f8f5;
+        color: #141414;
+    }
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+
+#loginform{
+    text-align: left;
+}
+
+.container {
+    padding: 10px;
+}
+
+.container .column {
+    float: left;
+    max-width: 25%;
+    min-width: 20%;
+    padding: 10px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #191919;
+    color: white;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #191919;
+    color: white;
+}
+
+#fpw{
+    color: #f2f8f5;
+    line-height: 100%;
+}
+
+.regibutton button{
+    background-color: #111;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding-top: 50px;
+}
+  
+.modal-content {
+    background-color: #ffffffec;
+    color: #141414;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 50%;
+}
+  
+
+#borderreg {
+    border: 1px solid #141414;
+    margin-bottom: 25px;
+}
+   
+  
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.modal-content input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #d8d8d8;
+    color: rgb(32, 32, 32);
+}
+
+.modal-content input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #d8d8d8;
+    color: rgb(32, 32, 32);
+}
+
+.modal-content h2,
+.modal-content p{
+    margin: 2px;
+    padding: 2px;
+}
+
+.modal-content h2{
+    font-size: 42px;
+}
+
+.regiconbutton button{
+    background-color: #e0dfdf;
+    color: rgb(32, 32, 32);
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.regiconbutton button:hover{
+    background-color: #b3b3b3;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+    .title h1{
+        font-size: 150%;
+        line-height: 60%;       
+    }   
+    #logo{
+        display: none;
+    }
+    .modal-content{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    body{
+        font-size: 80%;
+    }
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
