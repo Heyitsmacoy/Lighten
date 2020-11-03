@@ -32,7 +32,7 @@ const addUser = (req, res, next) => {
                     email
                 })
                 user.save()
-        
+
                 .then(response => {
                     res.json({
                         message: "NEW USER ADDED"
