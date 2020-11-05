@@ -1,6 +1,7 @@
 const User = require('../models/user-model')
 const mongoose = require('mongoose')
 require('dotenv/config')
+const bcrypt = require('bcrypt')
 
 const addUser = (req, res, next) => {
     var password = req.body.password
@@ -25,14 +26,14 @@ const addUser = (req, res, next) => {
                     message: "Passwords do not match"
                 })
             }    
-            else{
+           else{
                 let user = new User({
                     username,
                     password,
                     email
                 })
                 user.save()
-
+        
                 .then(response => {
                     res.json({
                         message: "NEW USER ADDED"
@@ -61,15 +62,18 @@ const login = (req, res, next) => {
     User.findOne({ username:unlog })
     .then(user => {
         if(user){
-            if(pwlog === user.password){
-                if("admin" === user.designation)
-                    res.send('Logged in as an admin')
-                else
-                    res.send('Logged in as a user')   
-            }
-            else{
-                res.send('Password incorrect')
-            }
+            //comparing encrypted_password and input_password
+            bcrypt.compare(pwlog, user.password, (err, isValid) => {
+                if(isValid){
+                    if("admin" === user.designation)
+                        res.send('Logged in as an admin')
+                    else
+                        res.send('Logged in as a user')   
+                }
+                else{
+                    res.send('incorrect password')
+                }
+            })
         }
         else{
             res.send('User doesnt exist')
